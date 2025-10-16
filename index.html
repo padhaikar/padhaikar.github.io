@@ -3,76 +3,106 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Padhai Kar!!!</title>
+  <title>Class 10 Notes - Padhai Kar!!!</title>
   <style>
-    /* Base Theme */
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       text-align: center;
       padding: 40px;
       background: #e8f5e9; /* light green background */
-      color: #2f3e46;      /* dark grayish text */
+      color: #222;
     }
 
     h1 {
-      color: #1b4332; /* deep forest green */
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      color: #1b1b1b;
     }
 
     p {
-      color: #3d5a40;
-      font-size: 1.2rem;
+      color: #333;
+      font-size: 1.1rem;
     }
 
-    /* Button Container */
-    .buttons {
+    .note-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 12px;
       justify-content: center;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
-    /* Buttons */
-    .btn {
-      background: #2f3e46; /* dark grayish green */
-      color: #ffffff;
-      padding: 15px 30px;
+    .note-btn {
+      background: #2e7d32; /* dark green */
+      color: white;
+      padding: 15px 25px;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 1.1rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
-    .btn:hover {
-      background: #1b4332; /* darker green hover */
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    .note-btn:hover {
+      background: #1b5e20;
     }
 
-    /* Footer */
-    footer {
+    /* QR Section */
+    .support-section {
+      background: #2f2f2f; /* dark grayish */
+      color: #f1f1f1;
+      padding: 40px 20px;
       margin-top: 60px;
+      border-radius: 12px;
+    }
+
+    .support-section h2 {
+      color: #a5d6a7; /* light green accent */
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .support-section p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #e0e0e0;
+    }
+
+    .qr-img {
+      width: 200px;
+      height: 200px;
+      border: 4px solid #a5d6a7;
+      border-radius: 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #555;
       font-size: 0.9rem;
-      color: #4f5d58;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Padhai Kar!!!</h1>
-  <p>Choose your class to get free notes and start studying smart!</p>
 
-  <div class="buttons">
-    <a class="btn" href="class9.html">Class 9th Notes FREE!!</a>
-    <a class="btn" href="class10.html">Class 10th Notes FREE!!</a>
-    <a class="btn" href="class11.html">Class 11th Notes FREE!!</a>
-    <a class="btn" href="class12.html">Class 12th Notes FREE!!</a>
+  <h1>Class 10 Notes</h1>
+  <p>Select your subject to download notes:</p>
+
+  <div class="note-buttons">
+    <a href="https://www.mediafire.com/folder/5iczdnl5zix9u/SCIENCE!!" class="note-btn" target="_blank">SCIENCE</a>
+    <a href="https://www.mediafire.com/folder/17488dwj5xz82/MATHS!!" class="note-btn" target="_blank">MATHS</a>
+    <a href="https://www.mediafire.com/folder/t6fyonzgjgcvl/ENGLISH!!" class="note-btn" target="_blank">ENGLISH</a>
+    <a href="https://www.mediafire.com/folder/nyh4k966hdg3e/SST!!" class="note-btn" target="_blank">SST</a>
   </div>
 
-  <footer>© 2025 Padhai Kar. Study. Revise. Succeed.</footer>
+  <!-- Support Section -->
+  <div class="support-section">
+    <h2>Support My Work 💚</h2>
+    <p>If these notes helped you, you can scan this QR code to donate and support future updates. Your contribution means a lot!</p>
+    <img src="image.png" alt="Donation QR Code" class="qr-img">
+  </div>
+
+  <footer>
+    © 2025 Padhai Kar!!! | Made with 💚 by Anonymous
+  </footer>
+
 </body>
 </html>
