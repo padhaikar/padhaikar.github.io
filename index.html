@@ -5,75 +5,90 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Padhai Kar!!!</title>
   <style>
-    /* Base Theme */
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
       margin: 0;
       text-align: center;
       padding: 40px;
-      background: #e8f5e9; /* light green background */
-      color: #2f3e46;      /* dark grayish text */
-      position: relative;
+      background: radial-gradient(circle at top, #0a192f 0%, #020c1b 100%);
+      color: #e0e0e0;
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1, p, .buttons, .disclaimer-btn, .support-section, footer {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
 
     h1 {
-      color: #1b4332; /* deep forest green */
-      font-size: 2.5rem;
+      color: #64ffda;
+      font-size: 2.7rem;
       margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(100,255,218,0.4);
     }
 
     p {
-      color: #3d5a40;
+      color: #a8b2d1;
       font-size: 1.2rem;
     }
 
-    /* Button Container */
     .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 20px;
       justify-content: center;
       margin-top: 40px;
     }
 
-    /* Buttons */
     .btn {
-      background: #2f3e46; /* dark grayish green */
-      color: #ffffff;
-      padding: 15px 30px;
+      background: rgba(10,25,47,0.8);
+      color: #64ffda;
+      padding: 15px 35px;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 1.1rem;
       font-weight: 500;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 12px rgba(100,255,218,0.1);
+      border: 1px solid rgba(255,255,255,0.5);
+      backdrop-filter: blur(6px);
     }
 
     .btn:hover {
-      background: #1b4332; /* darker green hover */
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      background: #64ffda;
+      color: #0a192f;
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 0 20px rgba(100,255,218,0.6);
+      border-color: #ffffff;
     }
 
-    /* Disclaimer Button */
     .disclaimer-btn {
-      margin-top: 30px;
-      background: #455a64;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
+      margin-top: 40px;
+      background: transparent;
+      color: #64ffda;
+      padding: 12px 25px;
+      border: 1px solid rgba(255,255,255,0.5);
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s;
+      box-shadow: 0 0 10px rgba(100,255,218,0.2);
     }
 
     .disclaimer-btn:hover {
-      background: #263238;
+      background: #64ffda;
+      color: #0a192f;
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(100,255,218,0.6);
     }
 
-    /* Modal (popup) */
     .modal {
       display: none;
       position: fixed;
@@ -82,69 +97,86 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
+      animation: fadeIn 0.3s ease;
     }
 
     .modal-content {
-      background: #f1f8e9; /* pale green */
+      background: #112240;
       margin: 10% auto;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       width: 90%;
       max-width: 500px;
-      color: #2e7d32;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      color: #64ffda;
+      box-shadow: 0 5px 20px rgba(100,255,218,0.2);
+      animation: slideIn 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.3);
     }
 
     .close-btn {
       float: right;
-      font-size: 20px;
+      font-size: 22px;
       cursor: pointer;
-      color: #333;
+      color: #a8b2d1;
     }
 
     .close-btn:hover {
-      color: red;
+      color: #ff6b6b;
     }
 
-    /* Support/QR Section (bottom-right) */
     .support-section {
       position: fixed;
       bottom: 20px;
       right: 20px;
       text-align: center;
-      color: #2f3e46;
-      background: transparent;
+      color: #64ffda;
+      background: rgba(10,25,47,0.6);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 10px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 12px rgba(100,255,218,0.1);
     }
 
     .support-section h2 {
       font-size: 1rem;
       margin-bottom: 5px;
-      color: #2e7d32;
     }
 
     .support-section p {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       margin-bottom: 5px;
-      color: #2e7d32;
     }
 
     .qr-img {
       width: 120px;
       height: 120px;
-      border: 2px solid #2e7d32;
+      border: 1px solid rgba(255,255,255,0.4);
       border-radius: 8px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(100,255,218,0.2);
     }
 
-    /* Footer */
+    .qr-img:hover {
+      transform: scale(1.05);
+    }
+
     footer {
-      margin-top: 60px;
+      margin-top: 80px;
       font-size: 0.9rem;
-      color: #4f5d58;
+      color: #8892b0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1545901236954751"
-     crossorigin="anonymous"></script>
 </head>
 <body>
   <h1>Welcome to Padhai Kar!!!</h1>
@@ -157,22 +189,16 @@
     <a class="btn" href="class12.html">Class 12th Notes FREE!!</a>
   </div>
 
-  <!-- Disclaimer Button -->
   <button class="disclaimer-btn" onclick="openModal()">Disclaimer</button>
 
-  <!-- Modal -->
   <div id="disclaimerModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">×</span>
       <h3>Disclaimer</h3>
-      <p>
-        The provided files are not scanned or cracked by us.  
-        We take them from open-source areas like websites, Telegram, etc.
-      </p>
+      <p>The provided files are not scanned or cracked by us.<br>We take them from open-source areas like websites, Telegram, etc.</p>
     </div>
   </div>
 
-  <!-- Support Section (QR bottom-right) -->
   <div class="support-section">
     <h2>Support 💚</h2>
     <p>Scan QR to donate and support future updates!</p>
@@ -185,14 +211,28 @@
     function openModal() {
       document.getElementById("disclaimerModal").style.display = "block";
     }
+
     function closeModal() {
       document.getElementById("disclaimerModal").style.display = "none";
     }
+
     window.onclick = function(event) {
       if (event.target == document.getElementById("disclaimerModal")) {
         closeModal();
       }
     }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('h1, p, .buttons, .disclaimer-btn, .support-section, footer').forEach(el => {
+      observer.observe(el);
+    });
   </script>
 </body>
 </html>
