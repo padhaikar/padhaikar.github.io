@@ -162,6 +162,18 @@
       transform: scale(1.05);
     }
 
+    .upi-id {
+      font-size: 0.8rem;
+      color: #a8b2d1; /* subtle color */
+      margin-top: 8px;
+      word-break: break-all;
+      transition: color 0.3s ease;
+    }
+
+    .upi-id:hover {
+      color: #64ffda; /* subtle highlight on hover */
+    }
+
     footer {
       margin-top: 80px;
       font-size: 0.9rem;
@@ -203,6 +215,7 @@
     <h2>Support 💚</h2>
     <p>Scan QR to donate and support future updates!</p>
     <img src="image.png" alt="Donation QR Code" class="qr-img">
+    <p class="upi-id">UPI: 8910011476@fam</p>
   </div>
 
   <footer>© 2025 Padhai Kar. Study. Revise. Succeed.</footer>
@@ -221,6 +234,10 @@
         closeModal();
       }
     }
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closeModal();
+    });
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
