@@ -37,13 +37,27 @@
     box-shadow: 0 2px 8px var(--shadow);
   }
 
-  .theme-btn {
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .theme-btn, .home-btn {
     padding: 10px 18px;
     border-radius: 8px;
     border: none;
-    background: #007bff;
-    color: #fff;
     cursor: pointer;
+    color: #fff;
+  }
+
+  .theme-btn {
+    background: #007bff;
+  }
+
+  .home-btn {
+    background: #ff5722;
+    text-decoration: none;
+    display: inline-block;
   }
 
   .container {
@@ -94,7 +108,11 @@
 
 <header>
   <h2>My Book Collection</h2>
-  <button class="theme-btn" onclick="toggleTheme()">Toggle Day/Night</button>
+
+  <div class="buttons">
+    <a href="https://padhaikar.github.io" class="home-btn">Back to Home</a>
+    <button class="theme-btn" onclick="toggleTheme()">Day/Night</button>
+  </div>
 </header>
 
 <div class="container">
